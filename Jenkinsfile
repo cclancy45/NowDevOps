@@ -1,7 +1,7 @@
 pipeline {
-    agent any
     stages {
         stage('Build') {
+            agent { label 'Test' }
             steps { 
                 catchError(buildResult: 'SUCCESS') {
                 sh 'docker stop samplerunning'
@@ -16,6 +16,7 @@ pipeline {
             }
         }
         stage('Deploy') {
+            agent { label 'Production' }
             steps { 
               snDevOpsChange(changeRequestDetails: """
                 {
