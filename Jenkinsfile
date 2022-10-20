@@ -32,6 +32,7 @@ pipeline {
                             "end_date": "2022-10-05 13:35:00"
                     }
                 }""")
+                build 'BuildNowApp-Prod'
             }
     }   
   } 
