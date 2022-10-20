@@ -2,7 +2,6 @@ pipeline {
     agent any
     stages {
         stage('Build') {
-            agent { label 'Test' }
             steps { 
                 catchError(buildResult: 'SUCCESS') {
                 sh 'docker stop samplerunning'
