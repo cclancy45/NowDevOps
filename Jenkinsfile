@@ -16,6 +16,7 @@
             }
         }
         stage('Deploy') {
+            agent {label 'Production'}
             steps { 
               snDevOpsChange(changeRequestDetails: """
                 {
