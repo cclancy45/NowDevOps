@@ -3,10 +3,6 @@
     stages {
         stage('Build') {
             steps { 
-                catchError(buildResult: 'SUCCESS') {
-                sh 'docker stop samplerunning'
-                sh 'docker rm samplerunning'
-            }
                 build 'BuildNowApp'
             }
         }
@@ -33,10 +29,6 @@
                             "end_date": "2022-10-05 13:35:00"
                     }
                 }""")
-                catchError(buildResult: 'SUCCESS') {
-                sh 'docker stop samplerunning'
-                sh 'docker rm samplerunning'
-            }
                 build 'BuildNowApp-Prod'
             }
     }   
